@@ -1,0 +1,45 @@
+package com.hrportal.main.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hrportal.main.pojo.InterviewDetails;
+import com.hrportal.main.repository.InterviewDetailsRepositoryInterface;
+@Service
+public class InterviewDetailsService implements InterviewDetailsServiceInterface{
+	@Autowired
+	private InterviewDetailsRepositoryInterface interviewDetailsRepository; 
+
+	@Override
+	public boolean addInterviewDetails(InterviewDetails interviewDetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateInterviewDetails(InterviewDetails interviewDetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteInterviewDetails(int interviewId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public InterviewDetails getInterviewDetailsByinterviewId(int interviewId) {
+		// TODO Auto-generated method stub
+		return interviewDetailsRepository.getInterviewDetailsByinterviewId(interviewId);
+	}
+
+	@Override
+	public List<InterviewDetails> getAllInterviewDetails() {
+		// TODO Auto-generated method stub
+		return interviewDetailsRepository.getAllInterviewDetails();
+	}
+
+}

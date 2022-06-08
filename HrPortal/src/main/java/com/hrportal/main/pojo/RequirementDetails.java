@@ -11,18 +11,16 @@ public class RequirementDetails {
 	private String jobRequestStatus;
 	private int experience;
 	private int requiredNoOfEmployees;
-	private int availableEmployees;
-	private int requiredNoOfCandidates;
-	EmployeeDetails employeeId;
-	ProjectMaster projectId;
+	private EmployeeDetails employeeDetails;
+	private ProjectMaster projectMaster;
 	
 	public RequirementDetails() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public RequirementDetails(int jobId, String qualification, String primarySkill1, String primarySkill2,
-			String primarySkill3, String jobRequestStatus, int experience, int requiredNoOfEmployees,
-			int availableEmployees, int requiredNoOfCandidates, EmployeeDetails employeeId, ProjectMaster projectId) {
+			String primarySkill3, String jobRequestStatus, int experience, int requiredNoOfEmployees, EmployeeDetails employeeDetails,
+			ProjectMaster projectMaster) {
 		super();
 		this.jobId = jobId;
 		this.qualification = qualification;
@@ -32,10 +30,9 @@ public class RequirementDetails {
 		this.jobRequestStatus = jobRequestStatus;
 		this.experience = experience;
 		this.requiredNoOfEmployees = requiredNoOfEmployees;
-		this.availableEmployees = availableEmployees;
-		this.requiredNoOfCandidates = requiredNoOfCandidates;
-		this.employeeId = employeeId;
-		this.projectId = projectId;
+
+		this.employeeDetails = employeeDetails;
+		this.projectMaster = projectMaster;
 	}
 
 	public int getJobId() {
@@ -102,36 +99,21 @@ public class RequirementDetails {
 		this.requiredNoOfEmployees = requiredNoOfEmployees;
 	}
 
-	public int getAvailableEmployees() {
-		return availableEmployees;
+
+	public EmployeeDetails getEmployeeDetails() {
+		return employeeDetails;
 	}
 
-	public void setAvailableEmployees(int availableEmployees) {
-		this.availableEmployees = availableEmployees;
+	public void setEmployeeDetails(EmployeeDetails employeeDetails) {
+		this.employeeDetails = employeeDetails;
 	}
 
-	public int getRequiredNoOfCandidates() {
-		return requiredNoOfCandidates;
+	public ProjectMaster getProjectMaster() {
+		return projectMaster;
 	}
 
-	public void setRequiredNoOfCandidates(int requiredNoOfCandidates) {
-		this.requiredNoOfCandidates = requiredNoOfCandidates;
-	}
-
-	public EmployeeDetails getEmployeeId() {
-		return employeeId;
-	}
-
-	public void setEmployeeId(EmployeeDetails employeeId) {
-		this.employeeId = employeeId;
-	}
-
-	public ProjectMaster getProjectId() {
-		return projectId;
-	}
-
-	public void setProjectId(ProjectMaster projectId) {
-		this.projectId = projectId;
+	public void setProjectMaster(ProjectMaster projectMaster) {
+		this.projectMaster = projectMaster;
 	}
 
 	@Override
@@ -139,9 +121,11 @@ public class RequirementDetails {
 		return "RequirementDetails [jobId=" + jobId + ", qualification=" + qualification + ", primarySkill1="
 				+ primarySkill1 + ", primarySkill2=" + primarySkill2 + ", primarySkill3=" + primarySkill3
 				+ ", jobRequestStatus=" + jobRequestStatus + ", experience=" + experience + ", requiredNoOfEmployees="
-				+ requiredNoOfEmployees + ", availableEmployees=" + availableEmployees + ", requiredNoOfCandidates="
-				+ requiredNoOfCandidates + ", employeeId=" + employeeId + ", projectId=" + projectId + "]";
+				+ requiredNoOfEmployees + ", employeeDetails=" + employeeDetails + ", projectMaster=" + projectMaster
+				+ "]";
 	}
+
+
 	
 	
 	

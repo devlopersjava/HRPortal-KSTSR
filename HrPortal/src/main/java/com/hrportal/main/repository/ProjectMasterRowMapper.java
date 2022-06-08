@@ -16,7 +16,6 @@ public class ProjectMasterRowMapper implements RowMapper<ProjectMaster> {
 	
 	@Override
 	public ProjectMaster mapRow(ResultSet resultSet, int i) throws SQLException {
-		System.out.println("in projectmaster rowmapper");
 		int projectId= resultSet.getInt("PROJECT_ID");
 		String projectName= resultSet.getString("PROJECT_NAME");
 		LocalDate startDate = resultSet.getDate("PROJECT_START_DATE").toLocalDate();

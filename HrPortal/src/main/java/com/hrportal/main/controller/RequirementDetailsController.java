@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,21 +19,27 @@ import com.hrportal.main.service.ProjectMasterServiceInterface;
 @RestController
 @CrossOrigin (origins = "*")
 //@CrossOrigin(origins = "http://localhost:4200/")
-@RequestMapping("jobrequestdetails")
+@RequestMapping("requirementdetails")
 public class RequirementDetailsController {
 	
 	@Autowired
-	private RequirementDetailsServiceInterface jobRequestDetailsService;
+	private RequirementDetailsServiceInterface requirementDetailsServiceInterface;
 	
-	@RequestMapping(value = "jobrequestdetail", method =RequestMethod.GET)
+	@RequestMapping(value = "requirementdetail", method =RequestMethod.GET)
 	public @ResponseBody List<RequirementDetails> getAllJobRequestDetails() {
-		return jobRequestDetailsService.getAllJobRequestDetails();
+		return requirementDetailsServiceInterface.getAllRequirmentDetails();
 	}
 	
 
-	@RequestMapping(value= "/jobrequestdetail/{jobId}", method= RequestMethod.GET)
+	@RequestMapping(value= "/requirementdetail/{jobId}", method= RequestMethod.GET)
 	public @ResponseBody RequirementDetails getProjectMasterById(@PathVariable("jobId") int jobId){
-		return jobRequestDetailsService.getJobRequestDetailsByJobId(jobId);
+		return requirementDetailsServiceInterface.getRequirmentDetailsByJobId(jobId);
 	}
+	
+	@RequestMapping(value = "/requirementdetail", method = RequestMethod.POST)
+	public boolean addRequirementDetails(@RequestBody RequirementDetails requirementDetails) {
+		return requirementDetailsServiceInterface.addRequirmentDetails(requirementDetails);
+	}
+
 
 }

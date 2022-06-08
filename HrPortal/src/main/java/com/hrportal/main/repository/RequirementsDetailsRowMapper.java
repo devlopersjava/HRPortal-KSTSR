@@ -23,6 +23,8 @@ public class RequirementsDetailsRowMapper implements RowMapper<RequirementDetail
 	public RequirementDetails mapRow(ResultSet resultSet, int i) throws SQLException {
 
 		int jobId = resultSet.getInt("JOB_ID");
+		int employeeId = resultSet.getInt("EMPLOYEE_ID");
+		int projectid = resultSet.getInt("PROJECT_ID");
 		String qualification=resultSet.getString("QUALIFICATION");
 		String primarySkill1 = resultSet.getString("PRIMARY_SKILL_1");
 		String primarySkill2= resultSet.getString("PRIMARY_SKILL_2");;
@@ -30,20 +32,17 @@ public class RequirementsDetailsRowMapper implements RowMapper<RequirementDetail
 		String jobRequestStatus=resultSet.getString("JOB_REQUEST_STATUS");;
 		int experience = resultSet.getInt("EXPERIENCE");
 		int requiredNoOfEmployees= resultSet.getInt("REQUIRED_NO_OF_EMPLOYEES");
-		int availableEmployees=resultSet.getInt("AVAILABLE_EMPLOYEES");
-		int requiredNoOfCandidates = resultSet.getInt("REQUIRED_NO_OF_CANDIDATES");
 		
-		int employeeId = resultSet.getInt("EMPLOYEE_ID");
-		EmployeeDetails employeeDetails = employeeDetailsRepository.getEmployeeDetailsByEmployeeId(employeeId);
-		
-		int projectid = resultSet.getInt("PROJECT_ID");
+	
 		ProjectMaster projectMaster= projectMasterRepository.getProjectMasterById(projectid);
 		
-		RequirementDetails requirementDetails = new RequirementDetails(jobId, qualification, primarySkill1, primarySkill2, primarySkill3, jobRequestStatus, experience, 
-				requiredNoOfEmployees, availableEmployees, requiredNoOfCandidates, employeeDetails, projectMaster);
-
+		EmployeeDetails employeeDetails = employeeDetailsRepository.getEmployeeDetailsByEmployeeId(employeeId);
+		
+		
+	RequirementDetails requirementDetails = new RequirementDetails(jobId, qualification, primarySkill1, primarySkill2, 
+			primarySkill3, jobRequestStatus, experience, requiredNoOfEmployees, employeeDetails, projectMaster);
 		return requirementDetails;
 	
 	}
-	;
+	
 }

@@ -12,35 +12,40 @@ import com.hrportal.main.repository.RequirementDetailsRepositoryInterface;
 public class RequirementDetailsService implements RequirementDetailsServiceInterface{
 	
 	@Autowired
-	private RequirementDetailsRepositoryInterface jobRequestDetailsRepository;
+	private RequirementDetailsRepositoryInterface requirementDetailsRepositoryInterface;
+
 	@Override
-	public boolean addJobRequestDetails(RequirementDetails requirementDetails) {
+	public boolean addRequirmentDetails(RequirementDetails requirementDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return requirementDetailsRepositoryInterface.addRequirmentDetails(requirementDetails);
 	}
 
 	@Override
-	public boolean updateJobRequestDetails(RequirementDetails requirementDetails) {
+	public boolean updateRequirmentDetails(RequirementDetails requirementDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return requirementDetailsRepositoryInterface.updateRequirmentDetails(requirementDetails);
 	}
 
 	@Override
-	public boolean deleteJobRequestDetailsDetails(int jobId) {
+	public boolean deleteRequirmentDetailsDetails(int jobId) {
 		// TODO Auto-generated method stub
-		return false;
+		return requirementDetailsRepositoryInterface.deleteRequirmentDetailsDetails(jobId);
 	}
 
 	@Override
-	public RequirementDetails getJobRequestDetailsByJobId(int jobId) {
+	public RequirementDetails getRequirmentDetailsByJobId(int jobId) {
 		// TODO Auto-generated method stub
-		return jobRequestDetailsRepository.getJobRequestDetailsByJobId(jobId);
+		return requirementDetailsRepositoryInterface.getRequirmentDetailsByJobId(jobId);
 	}
 
 	@Override
-	public List<RequirementDetails> getAllJobRequestDetails() {
+	public List<RequirementDetails> getAllRequirmentDetails() {
 		// TODO Auto-generated method stub
-		return jobRequestDetailsRepository.getAllJobRequestDetails();
+		return requirementDetailsRepositoryInterface.getAllRequirmentDetails();
 	}
+
+
+
+
 
 }

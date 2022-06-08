@@ -11,5 +11,5 @@ public interface EmployeeDetailsRepositoryInterface {
 	public boolean deleteEmployeeDetails(int employeeId);
 	public EmployeeDetails getEmployeeDetailsByEmployeeId(int employeeId);
 	public  List<EmployeeDetails> getAllEmployeeDetails();
-
+	public EmployeeDetails getEmployeeDetailsByLoginId(int loginId);
 }

@@ -35,7 +35,7 @@ public class CandidateDetailsRowMapper implements RowMapper<CandidateDetails> {
 		int fileId = resultSet.getInt("FILE_ID");
 		
 		int jobId = resultSet.getInt("JOB_ID");
-		RequirementDetails requirementDetails = requirementDetailsRepository.getJobRequestDetailsByJobId(jobId);
+		RequirementDetails requirementDetails = requirementDetailsRepository.getRequirmentDetailsByJobId(jobId);
 		requirementDetails.setJobId(jobId);
 		
 		CandidateDetails candidateDetails = new CandidateDetails(candidateId, applicationDate, firstName, lastName, emailId, 

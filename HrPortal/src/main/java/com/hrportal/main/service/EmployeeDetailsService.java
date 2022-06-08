@@ -44,6 +44,16 @@ public class EmployeeDetailsService implements EmployeeDetailsServiceInterface {
 		return employeeDetailsRepository.getAllEmployeeDetails();
 	}
 
+	@Override
+	public EmployeeDetails getEmployeeDetailsByLoginId(int loginId) {
+		// TODO Auto-generated method stub
+		return employeeDetailsRepository.getEmployeeDetailsByLoginId(loginId);
+	}
+
+
+
+
+
 	
 	
 }

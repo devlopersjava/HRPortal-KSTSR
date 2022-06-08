@@ -8,9 +8,6 @@ public class HrPortalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HrPortalApplication.class, args);
-		System.out.println("shubham");
-		System.out.println("Spring Boot application deployed successfully");
-		System.out.println("Commit from Tejas");
 	}
 	
 

@@ -6,10 +6,10 @@ import com.hrportal.main.pojo.RequirementDetails;
 
 public interface RequirementDetailsRepositoryInterface {
 
-	
-	public boolean addJobRequestDetails(RequirementDetails jobRquestDetails);
-	public boolean updateJobRequestDetails(RequirementDetails jobRquestDetails);
-	public boolean deleteJobRequestDetailsDetails(int jobId);
-	public RequirementDetails getJobRequestDetailsByJobId(int jobId);
-	public  List<RequirementDetails> getAllJobRequestDetails();
+
+	public boolean addRequirmentDetails(RequirementDetails requirementDetails);
+	public boolean updateRequirmentDetails(RequirementDetails requirementDetails);
+	public boolean deleteRequirmentDetailsDetails(int jobId);
+	public RequirementDetails getRequirmentDetailsByJobId(int jobId);
+	public  List<RequirementDetails> getAllRequirmentDetails();
 }

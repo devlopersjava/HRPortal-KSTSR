@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.hrportal.main.pojo.CandidateDetails;
 import com.hrportal.main.pojo.EmployeeDetails;
+import com.hrportal.main.pojo.LoginDetails;
 import com.hrportal.main.pojo.ProjectMaster;
 
 @Repository
@@ -32,6 +33,8 @@ public class EmployeeDetailsRepository implements EmployeeDetailsRepositoryInter
 			+ "PRIMARY_SKILL_2,PRIMARY_SKILL_3,MGR_ID";
 	
 	private static String DELETE_EMOPLOYEE_DETAILS="DELETE EMPLOYEE_DETAILS WHERE EMPLOYEE_ID=?";
+	
+	private static String SELECT_EMPLOYEE_BY_LOGIN_ID = "SELECT * FROM EMPLOYEE_DETAILS WHERE LOGIN_ID=?";
 	
 	private int resultount;
 	@Override
@@ -63,5 +66,13 @@ public class EmployeeDetailsRepository implements EmployeeDetailsRepositoryInter
 		List<EmployeeDetails> allEmployeeDetails = jdbcTemplate.query(SELECT_ALL_EMPLOYEE_DETAILS, employeeDetailsRowMapper);
 		return allEmployeeDetails;
 	}
+
+	@Override
+	public EmployeeDetails getEmployeeDetailsByLoginId(int loginId) {
+		Object[] args = {loginId};
+     	EmployeeDetails employeeDetailsByLoginId = jdbcTemplate.queryForObject(SELECT_EMPLOYEE_BY_LOGIN_ID, employeeDetailsRowMapper, args);
+		return employeeDetailsByLoginId;
+	}
+
 
 }

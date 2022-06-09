@@ -18,15 +18,16 @@ public class CandidateDetails {
 	private String primarySkill3;
 	private String applicationStatus;
 	private int fileId;
-	RequirementDetails jobId;
-	
+	private RequirementDetails requirementDetails;
+
 public CandidateDetails() {
 	// TODO Auto-generated constructor stub
 }
 
 public CandidateDetails(int candidateId, LocalDate applicationDate, String firstName, String lastName, String emailId,
 		long contactNo, LocalDate dateOfBirth, String qualification, int experience, String primarySkill1,
-		String primarySkill2, String primarySkill3, String applicationStatus, int fileId, RequirementDetails jobId) {
+		String primarySkill2, String primarySkill3, String applicationStatus, int fileId,
+		RequirementDetails requirementDetails) {
 	super();
 	this.candidateId = candidateId;
 	this.applicationDate = applicationDate;
@@ -42,7 +43,7 @@ public CandidateDetails(int candidateId, LocalDate applicationDate, String first
 	this.primarySkill3 = primarySkill3;
 	this.applicationStatus = applicationStatus;
 	this.fileId = fileId;
-	this.jobId = jobId;
+	this.requirementDetails = requirementDetails;
 }
 
 public int getCandidateId() {
@@ -157,12 +158,12 @@ public void setFileId(int fileId) {
 	this.fileId = fileId;
 }
 
-public RequirementDetails getJobId() {
-	return jobId;
+public RequirementDetails getRequirementDetails() {
+	return requirementDetails;
 }
 
-public void setJobId(RequirementDetails jobId) {
-	this.jobId = jobId;
+public void setRequirementDetails(RequirementDetails requirementDetails) {
+	this.requirementDetails = requirementDetails;
 }
 
 @Override
@@ -171,9 +172,10 @@ public String toString() {
 			+ firstName + ", lastName=" + lastName + ", emailId=" + emailId + ", contactNo=" + contactNo
 			+ ", dateOfBirth=" + dateOfBirth + ", qualification=" + qualification + ", experience=" + experience
 			+ ", primarySkill1=" + primarySkill1 + ", primarySkill2=" + primarySkill2 + ", primarySkill3="
-			+ primarySkill3 + ", applicationStatus=" + applicationStatus + ", fileId=" + fileId + ", jobId=" + jobId
-			+ "]";
+			+ primarySkill3 + ", applicationStatus=" + applicationStatus + ", fileId=" + fileId
+			+ ", requirementDetails=" + requirementDetails + "]";
 }
+
 
 
 }

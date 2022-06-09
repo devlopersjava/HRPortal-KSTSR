@@ -37,11 +37,11 @@ public class ProjectMaster {
 		this.projectName = projectName;
 	}
 
-	public LocalDate getStartdate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartdate(LocalDate startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
@@ -58,8 +58,6 @@ public class ProjectMaster {
 		return "ProjectMaster [projectId=" + projectId + ", projectName=" + projectName + ", startDate=" + startDate
 				+ ", endDate=" + endDate + "]";
 	}
-	
-	
-	
+
 	
 }

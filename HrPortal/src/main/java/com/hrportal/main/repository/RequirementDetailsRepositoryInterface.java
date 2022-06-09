@@ -12,4 +12,5 @@ public interface RequirementDetailsRepositoryInterface {
 	public boolean deleteRequirmentDetailsDetails(int jobId);
 	public RequirementDetails getRequirmentDetailsByJobId(int jobId);
 	public  List<RequirementDetails> getAllRequirmentDetails();
+	public List<RequirementDetails> getSingleRequestByProjectId(int projectId);
 }

@@ -18,19 +18,19 @@ public class CandidateDetailsService implements CandidateDetailsServiceInterface
 	@Override
 	public boolean addCandidateDetails(CandidateDetails candidateDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return candidateDetailsRepository.addCandidateDetails(candidateDetails);
 	}
 
 	@Override
 	public boolean updateCandidateDetails(CandidateDetails candidateDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return candidateDetailsRepository.updateCandidateDetails(candidateDetails);
 	}
 
 	@Override
 	public boolean deleteCandidateDetailsDetails(int candidateId) {
 		// TODO Auto-generated method stub
-		return false;
+		return candidateDetailsRepository.deleteCandidateDetailsDetails(candidateId);
 	}
 
 	@Override

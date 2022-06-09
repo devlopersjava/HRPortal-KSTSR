@@ -25,6 +25,11 @@ public class RequirementDetailsController {
 	@Autowired
 	private RequirementDetailsServiceInterface requirementDetailsServiceInterface;
 	
+	@RequestMapping(value= "requirementdetailbyprojectid/{projectid}", method= RequestMethod.GET)
+	public @ResponseBody List<RequirementDetails> getSingleRequirementDetailByProjectId(@PathVariable int projectid){
+		return requirementDetailsServiceInterface.getSingleRequestByProjectId(projectid);
+	}
+	
 	@RequestMapping(value = "requirementdetail", method =RequestMethod.GET)
 	public @ResponseBody List<RequirementDetails> getAllJobRequestDetails() {
 		return requirementDetailsServiceInterface.getAllRequirmentDetails();
@@ -40,6 +45,14 @@ public class RequirementDetailsController {
 	public boolean addRequirementDetails(@RequestBody RequirementDetails requirementDetails) {
 		return requirementDetailsServiceInterface.addRequirmentDetails(requirementDetails);
 	}
-
+	@RequestMapping(value= "/requirementdetail", method= RequestMethod.PUT)
+	public @ResponseBody boolean updateRequirementDetails(@RequestBody RequirementDetails requirementDetails){
+		return requirementDetailsServiceInterface.updateRequirmentDetails(requirementDetails);
+	}
+	
+	@RequestMapping(value= "/requirementdetail/{jobId}", method= RequestMethod.DELETE)
+	public @ResponseBody boolean deleteRequirementDetails(@PathVariable("jobId")  int jobId){
+		 return requirementDetailsServiceInterface.deleteRequirmentDetailsDetails(jobId);
+	}
 
 }

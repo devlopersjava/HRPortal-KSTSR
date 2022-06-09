@@ -15,19 +15,19 @@ public class InterviewDetailsService implements InterviewDetailsServiceInterface
 	@Override
 	public boolean addInterviewDetails(InterviewDetails interviewDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return interviewDetailsRepository.addInterviewDetails(interviewDetails);
 	}
 
 	@Override
 	public boolean updateInterviewDetails(InterviewDetails interviewDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return interviewDetailsRepository.updateInterviewDetails(interviewDetails);
 	}
 
 	@Override
 	public boolean deleteInterviewDetails(int interviewId) {
 		// TODO Auto-generated method stub
-		return false;
+		return interviewDetailsRepository.deleteInterviewDetails(interviewId);
 	}
 
 	@Override

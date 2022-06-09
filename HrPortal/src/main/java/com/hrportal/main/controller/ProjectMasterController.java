@@ -43,7 +43,7 @@ public class ProjectMasterController {
 		 return projectMasterService.deleteProjectMaster(projectId);
 	}
 	
-	@RequestMapping(value= "/projectmaster", method= RequestMethod.PUT, consumes = "application/json", produces ="application/json")
+	@RequestMapping(value= "/projectmaster", method= RequestMethod.PUT)
 	public @ResponseBody boolean updateProjectMaster(@RequestBody ProjectMaster newproject){
 		return projectMasterService.updateProjectMaster(newproject);
 	}

@@ -27,18 +27,31 @@ public class EmployeeDetailsController {
 	
 	
 
-//	@RequestMapping(value= "/employeedetail/{employeeId}", method= RequestMethod.GET)
-//	public @ResponseBody EmployeeDetails getEmployeeDetailsByEmployeeId(@PathVariable("employeeId") int employeeId){
-//		return employeeDetailService.getEmployeeDetailsByEmployeeId(employeeId);
-//	}
-//		@RequestMapping(value = "employeedetail", method =RequestMethod.GET)
-//		public @ResponseBody List<EmployeeDetails> getAllEmployeeDetails() {
-//			return employeeDetailService.getAllEmployeeDetails();
-//	}
-//		
+	@RequestMapping(value= "/employeedetailbyemployeeid/{employeeId}", method= RequestMethod.GET)
+	public @ResponseBody EmployeeDetails getEmployeeDetailsByEmployeeId(@PathVariable("employeeId") int employeeId){
+		return employeeDetailService.getEmployeeDetailsByEmployeeId(employeeId);
+	}
+		@RequestMapping(value = "employeedetail", method =RequestMethod.GET)
+		public @ResponseBody List<EmployeeDetails> getAllEmployeeDetails() {
+			return employeeDetailService.getAllEmployeeDetails();
+	}
+		
 		@RequestMapping(value= "/employeedetail/{loginId}", method= RequestMethod.GET)
 		public EmployeeDetails getEmployeeDetailsByLoginId (@PathVariable("loginId") int loginId){
 			 return employeeDetailService.getEmployeeDetailsByLoginId(loginId);
 		}
+		@RequestMapping(value= "/employeedetail/{employeeId}", method= RequestMethod.DELETE)
+		public @ResponseBody boolean deleteEmployeeDetails(@PathVariable("employeeId")  int employeeId){
+			 return employeeDetailService.deleteEmployeeDetails(employeeId);
+		}
+		@RequestMapping(value= "/employeedetail", method= RequestMethod.PUT)
+		public @ResponseBody boolean updateEmployeeDetails(@RequestBody EmployeeDetails employeeDetails){
+			return employeeDetailService.updateEmployeeDetails(employeeDetails);
+		}
+		@RequestMapping(value = "/employeedetail", method = RequestMethod.POST)
+		public boolean addEmployeeDetails(@RequestBody EmployeeDetails employeeDetails) {
+			return employeeDetailService.addEmployeeDetails(employeeDetails);  
+		}
+
 
 }

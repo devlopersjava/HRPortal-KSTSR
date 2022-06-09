@@ -19,7 +19,8 @@ private JdbcTemplate jdbcTemplate;
 	
 
 	
-private static String INSERT_PROJECT_MASTER = "INSERT INTO PROJECT_MASTER(PROJECT_NAME,PROJECT_START_DATE,PROJECT_END_DATE) VALUES(?,?,?)";
+private static String INSERT_PROJECT_MASTER = "INSERT INTO PROJECT_MASTER(PROJECT_ID,PROJECT_NAME,PROJECT_START_DATE,PROJECT_END_DATE)"
+		+ " VALUES(SEQ1_PROJECT_MASTER.nextval,?,?,?)";
 private static String SELECT_ALL_PROJECT_MASTER="SELECT* FROM PROJECT_MASTER ";
 private static String SELECT_SINGLE_PROJECT_MASTER="SELECT * FROM PROJECT_MASTER WHERE PROJECT_ID = ?";
 private static String UPDATE_PROJECT_MASTER="UPDATE PROJECT_MASTER SET PROJECT_NAME = ?,PROJECT_START_DATE=?,PROJECT_END_DATE=? WHERE PROJECT_ID = ?";
@@ -29,7 +30,7 @@ private int resultCount;
 
 	@Override
 	public boolean addNewProjectMaster(ProjectMaster projectMaster) {
-		Object[] args = { projectMaster.getProjectName(),projectMaster.getStartdate(),projectMaster.getEndDate()};
+		Object[] args = { projectMaster.getProjectName(),projectMaster.getStartDate(),projectMaster.getEndDate()};
 		resultCount = jdbcTemplate.update(INSERT_PROJECT_MASTER, args);
 		if (resultCount > 0) {
 			return true;
@@ -39,7 +40,7 @@ private int resultCount;
 
 	@Override
 	public boolean updateProjectMaster(ProjectMaster projectMaster) {
-		Object[] args = {projectMaster.getProjectName(),projectMaster.getStartdate(),projectMaster.getEndDate(),projectMaster.getProjectId()};
+		Object[] args = {projectMaster.getProjectName(),projectMaster.getStartDate(),projectMaster.getEndDate(),projectMaster.getProjectId()};
 		resultCount = jdbcTemplate.update(UPDATE_PROJECT_MASTER, args);
 		if (resultCount > 0)
 			return true;

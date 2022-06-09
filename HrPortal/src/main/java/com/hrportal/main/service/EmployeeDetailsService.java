@@ -17,19 +17,19 @@ public class EmployeeDetailsService implements EmployeeDetailsServiceInterface {
 	@Override
 	public boolean addEmployeeDetails(EmployeeDetails employeeDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return employeeDetailsRepository.addEmployeeDetails(employeeDetails);
 	}
 
 	@Override
 	public boolean updateEmployeeDetails(EmployeeDetails employeeDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return employeeDetailsRepository.updateEmployeeDetails(employeeDetails);
 	}
 
 	@Override
 	public boolean deleteEmployeeDetails(int employeeId) {
 		// TODO Auto-generated method stub
-		return false;
+		return employeeDetailsRepository.deleteEmployeeDetails(employeeId);
 	}
 
 	@Override

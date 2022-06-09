@@ -19,8 +19,8 @@ public class EmployeeDetails {
 	private String primarySkill2;
 	private String primarySkill3;
 	private int mgrId;
-	LoginDetails loginId;
-	ProjectMaster projectId;
+	private LoginDetails loginDetails;
+	private ProjectMaster projectMaster;
 	
 		public EmployeeDetails() {
 			// TODO Auto-generated constructor stub
@@ -28,8 +28,8 @@ public class EmployeeDetails {
 
 		public EmployeeDetails(int employeeId, String firstName, String lastName, String emailId, long contactNo,
 				String gender, LocalDate dateOfBirth, LocalDate dateOfJoining, String designation, String qualification,
-				String primarySkill1, String primarySkill2, String primarySkill3, int mgrId, LoginDetails loginId,
-				ProjectMaster projectId) {
+				String primarySkill1, String primarySkill2, String primarySkill3, int mgrId, LoginDetails loginDetails,
+				ProjectMaster projectMaster) {
 			super();
 			this.employeeId = employeeId;
 			this.firstName = firstName;
@@ -45,8 +45,8 @@ public class EmployeeDetails {
 			this.primarySkill2 = primarySkill2;
 			this.primarySkill3 = primarySkill3;
 			this.mgrId = mgrId;
-			this.loginId = loginId;
-			this.projectId = projectId;
+			this.loginDetails = loginDetails;
+			this.projectMaster = projectMaster;
 		}
 
 		public int getEmployeeId() {
@@ -161,20 +161,20 @@ public class EmployeeDetails {
 			this.mgrId = mgrId;
 		}
 
-		public LoginDetails getLoginId() {
-			return loginId;
+		public LoginDetails getLoginDetails() {
+			return loginDetails;
 		}
 
-		public void setLoginId(LoginDetails loginId) {
-			this.loginId = loginId;
+		public void setLoginDetails(LoginDetails loginDetails) {
+			this.loginDetails = loginDetails;
 		}
 
-		public ProjectMaster getProjectId() {
-			return projectId;
+		public ProjectMaster getProjectMaster() {
+			return projectMaster;
 		}
 
-		public void setProjectId(ProjectMaster projectId) {
-			this.projectId = projectId;
+		public void setProjectMaster(ProjectMaster projectMaster) {
+			this.projectMaster = projectMaster;
 		}
 
 		@Override
@@ -183,9 +183,11 @@ public class EmployeeDetails {
 					+ ", emailId=" + emailId + ", contactNo=" + contactNo + ", gender=" + gender + ", dateOfBirth="
 					+ dateOfBirth + ", dateOfJoining=" + dateOfJoining + ", designation=" + designation
 					+ ", qualification=" + qualification + ", primarySkill1=" + primarySkill1 + ", primarySkill2="
-					+ primarySkill2 + ", primarySkill3=" + primarySkill3 + ", mgrId=" + mgrId + ", loginId=" + loginId
-					+ ", projectId=" + projectId + "]";
+					+ primarySkill2 + ", primarySkill3=" + primarySkill3 + ", mgrId=" + mgrId + ", loginDetails="
+					+ loginDetails + ", projectMaster=" + projectMaster + "]";
 		}
+		
+		
 		
 		
 }

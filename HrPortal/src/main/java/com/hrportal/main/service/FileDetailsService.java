@@ -17,19 +17,19 @@ public class FileDetailsService implements FileDetailsServiceInterface {
 	@Override
 	public boolean addFileDetails(FileDetails fileDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return fileDetailsRepository.addFileDetails(fileDetails);
 	}
 
 	@Override
 	public boolean updateFileDetails(FileDetails fileDetails) {
 		// TODO Auto-generated method stub
-		return false;
+		return fileDetailsRepository.updateFileDetails(fileDetails);
 	}
 
 	@Override
 	public boolean deleteFileDetailsDetails(int fileId) {
 		// TODO Auto-generated method stub
-		return false;
+		return fileDetailsRepository.deleteFileDetailsDetails(fileId);
 	}
 
 	@Override

@@ -7,18 +7,18 @@ public class FileDetails {
 	private int fileId;
 	private String fileName;
 	private String fileType;
-	CandidateDetails candidateId;
+	private CandidateDetails candidateDetails;
 	
 	public FileDetails() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public FileDetails(int fileId, String fileName, String fileType, CandidateDetails candidateId) {
+	public FileDetails(int fileId, String fileName, String fileType, CandidateDetails candidateDetails) {
 		super();
 		this.fileId = fileId;
 		this.fileName = fileName;
 		this.fileType = fileType;
-		this.candidateId = candidateId;
+		this.candidateDetails = candidateDetails;
 	}
 
 	public int getFileId() {
@@ -45,19 +45,20 @@ public class FileDetails {
 		this.fileType = fileType;
 	}
 
-	public CandidateDetails getCandidateId() {
-		return candidateId;
+	public CandidateDetails getCandidateDetails() {
+		return candidateDetails;
 	}
 
-	public void setCandidateId(CandidateDetails candidateId) {
-		this.candidateId = candidateId;
+	public void setCandidateDetails(CandidateDetails candidateDetails) {
+		this.candidateDetails = candidateDetails;
 	}
 
 	@Override
 	public String toString() {
-		return "FileDetails [fileId=" + fileId + ", fileName=" + fileName + ", fileType=" + fileType + ", candidateId="
-				+ candidateId + "]";
+		return "FileDetails [fileId=" + fileId + ", fileName=" + fileName + ", fileType=" + fileType
+				+ ", candidateDetails=" + candidateDetails + "]";
 	}
 	
+
 	
 }

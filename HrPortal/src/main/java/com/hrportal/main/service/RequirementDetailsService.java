@@ -44,6 +44,11 @@ public class RequirementDetailsService implements RequirementDetailsServiceInter
 		return requirementDetailsRepositoryInterface.getAllRequirmentDetails();
 	}
 
+	@Override
+	public List<RequirementDetails> getSingleRequestByProjectId(int projectId) {
+		return requirementDetailsRepositoryInterface.getSingleRequestByProjectId(projectId);
+	}
+
 
 
 

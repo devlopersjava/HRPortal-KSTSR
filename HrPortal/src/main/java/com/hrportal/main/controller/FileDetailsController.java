@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,5 +35,18 @@ public class FileDetailsController {
 			return fileDetailsService.getAllFileDetails();
 					
 	}
+		@RequestMapping(value = "/filedetail", method = RequestMethod.POST)
+		public boolean addFiledetail(@RequestBody FileDetails filedetail) {
+			return  fileDetailsService.addFileDetails(filedetail);
+		}
+		
+		@RequestMapping(value= "/filedetail", method= RequestMethod.PUT)
+		public @ResponseBody boolean updateFiledetail(@RequestBody FileDetails fileDetails){
+			return fileDetailsService.updateFileDetails(fileDetails);
+		}
+		@RequestMapping(value= "/filedetail/{fileId}", method= RequestMethod.DELETE)
+		public @ResponseBody boolean deleteFileDetails(@PathVariable("fileId")  int fileId){
+			 return fileDetailsService.deleteFileDetailsDetails(fileId);
+		}
 
 }

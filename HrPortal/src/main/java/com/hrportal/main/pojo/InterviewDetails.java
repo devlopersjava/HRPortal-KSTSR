@@ -8,15 +8,15 @@ public class InterviewDetails {
 	private int hrRound;
 	private String remarks;
 	private String interviewStatus;
-	EmployeeDetails interviewerId;
-	CandidateDetails candidateId;
+	private EmployeeDetails employeeDetails;
+	private CandidateDetails candidateDetails;
 	
 	public InterviewDetails() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public InterviewDetails(int interviewId, int aptitudeRound, int technicalRound, int hrRound, String remarks,
-			String interviewStatus, EmployeeDetails interviewerId, CandidateDetails candidateId) {
+			String interviewStatus, EmployeeDetails employeeDetails, CandidateDetails candidateDetails) {
 		super();
 		this.interviewId = interviewId;
 		this.aptitudeRound = aptitudeRound;
@@ -24,8 +24,8 @@ public class InterviewDetails {
 		this.hrRound = hrRound;
 		this.remarks = remarks;
 		this.interviewStatus = interviewStatus;
-		this.interviewerId = interviewerId;
-		this.candidateId = candidateId;
+		this.employeeDetails = employeeDetails;
+		this.candidateDetails = candidateDetails;
 	}
 
 	public int getInterviewId() {
@@ -76,28 +76,31 @@ public class InterviewDetails {
 		this.interviewStatus = interviewStatus;
 	}
 
-	public EmployeeDetails getInterviewerId() {
-		return interviewerId;
+	public EmployeeDetails getEmployeeDetails() {
+		return employeeDetails;
 	}
 
-	public void setInterviewerId(EmployeeDetails interviewerId) {
-		this.interviewerId = interviewerId;
+	public void setEmployeeDetails(EmployeeDetails employeeDetails) {
+		this.employeeDetails = employeeDetails;
 	}
 
-	public CandidateDetails getCandidateId() {
-		return candidateId;
+	public CandidateDetails getCandidateDetails() {
+		return candidateDetails;
 	}
 
-	public void setCandidateId(CandidateDetails candidateId) {
-		this.candidateId = candidateId;
+	public void setCandidateDetails(CandidateDetails candidateDetails) {
+		this.candidateDetails = candidateDetails;
 	}
 
 	@Override
 	public String toString() {
 		return "InterviewDetails [interviewId=" + interviewId + ", aptitudeRound=" + aptitudeRound + ", technicalRound="
 				+ technicalRound + ", hrRound=" + hrRound + ", remarks=" + remarks + ", interviewStatus="
-				+ interviewStatus + ", interviewerId=" + interviewerId + ", candidateId=" + candidateId + "]";
+				+ interviewStatus + ", employeeDetails=" + employeeDetails + ", candidateDetails=" + candidateDetails
+				+ "]";
 	}
+	
+	
 	
 	
 	

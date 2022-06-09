@@ -17,25 +17,43 @@ public class FileDetailsRepository implements FileDetailsRepositoryInterface {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+private int resultCount;
+	
+	private static String ADD_FILE_DETAILS = "INSERT INTO FILE_DETAILS (FILE_ID,CANDIDATE_ID,FILE_NAME,FILE_TYPE) VALUES (SEQ5_FILE_DETAILS.nextval,?,?,?)";
 	private static String SELECT_ALL_FILE_DETAILS="SELECT * FROM FILE_DETAILS ";
 	private static String SELECT_SINGLE_FILE_DETAILS="SELECT * FROM FILE_DETAILS WHERE FILE_ID = ?";
+	private static String UPDATE_FILE_DETAILS = "UPDATE FILE_DETAILS SET CANDIDATE_ID = ?, FILE_NAME = ?,FILE_TYPE = ? WHERE FILE_ID = ?";
+	public static String DELETE_FILE_DETAILS = "DELETE FILE_DETAILS WHERE FILE_ID = ?";
+	
 	
 	
 	@Override
 	public boolean addFileDetails(FileDetails fileDetails) {
-		// TODO Auto-generated method stub
+		Object [] args = {fileDetails.getCandidateDetails().getCandidateId(),fileDetails.getFileName(),fileDetails.getFileType()};
+		resultCount = jdbcTemplate.update(ADD_FILE_DETAILS, args);
+		if (resultCount>0)
+			return true;
+		else
 		return false;
 	}
 
 	@Override
 	public boolean updateFileDetails(FileDetails fileDetails) {
-		// TODO Auto-generated method stub
+		Object [] args = {fileDetails.getCandidateDetails().getCandidateId(),fileDetails.getFileName(),fileDetails.getFileType(),fileDetails.getFileId()};
+		resultCount = jdbcTemplate.update(UPDATE_FILE_DETAILS, args);
+		if (resultCount>0)
+			return true;
+		else
 		return false;
 	}
 
 	@Override
 	public boolean deleteFileDetailsDetails(int fileId) {
-		// TODO Auto-generated method stub
+		Object [] args = {fileId};
+		resultCount = jdbcTemplate.update(DELETE_FILE_DETAILS, args);
+		if(resultCount>0)
+			return true;
+		else
 		return false;
 	}
 

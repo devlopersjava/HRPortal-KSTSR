@@ -1,6 +1,7 @@
 package com.hrportal.main.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,7 +31,8 @@ public class RequirementDetailsRepository implements RequirementDetailsRepositor
 			+ " PRIMARY_SKILL_1=?,PRIMARY_SKILL_2=?,PRIMARY_SKILL_3=?, JOB_REQUEST_STATUS=?, EXPERIENCE=?, REQUIRED_NO_OF_EMPLOYEES=?"
 			+ " WHERE JOB_ID = ?";
 	
-	private static String DELETE_JOB_REQUEST_DETAILS="DELETE REQUIRMENT_DETAILS WHERE JOB_ID = ?";
+	private static String DELETE_REQUIREMENT_DETAILS="DELETE REQUIRMENT_DETAILS WHERE JOB_ID = ?";
+	private static String GET_SINGLE_REQUEST_BY_PROJECT_ID="SELECT * FROM REQUIRMENT_DETAILS WHERE PROJECT_ID = ?";
 	
 	private int resultCount;
 
@@ -62,8 +64,12 @@ public boolean updateRequirmentDetails(RequirementDetails requirementDetails) {
 
 @Override
 public boolean deleteRequirmentDetailsDetails(int jobId) {
-	// TODO Auto-generated method stub
-	return false;
+	Object[] args = { jobId};
+	resultCount = jdbcTemplate.update(DELETE_REQUIREMENT_DETAILS, args);
+	if (resultCount > 0)
+		return true;
+	else
+		return false;
 }
 
 
@@ -78,6 +84,12 @@ public RequirementDetails getRequirmentDetailsByJobId(int jobId) {
 @Override
 public List<RequirementDetails> getAllRequirmentDetails() {
 	List<RequirementDetails> requirementDetails = jdbcTemplate.query(SELECT_ALL_REQUIRMENT_DETAILS, requirementsDetailsRowMapper);
+	return requirementDetails;
+}
+@Override
+public List<RequirementDetails> getSingleRequestByProjectId(int projectid) {
+	Object [] args = {projectid};
+List <RequirementDetails> requirementDetails = jdbcTemplate.query(GET_SINGLE_REQUEST_BY_PROJECT_ID, requirementsDetailsRowMapper, args);
 	return requirementDetails;
 }
 	
